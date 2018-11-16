@@ -17,6 +17,8 @@ spec:
         env:
         - name: K8S_CLUSTER
           value: "whiskey"
+        - name: FOO
+          value: "bar"
         ports:
         - name: http-api
           containerPort: 5000
