@@ -20,7 +20,7 @@ spec:
           value: whiskey
         - name: FOO
           value: bar
-        image: undeadops/webby:master-4df32dh4
+        image: undeadops/webby:master-4df3334
         name: spidey-stage
         ports:
         - containerPort: 5000
