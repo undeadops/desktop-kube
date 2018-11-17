@@ -1,28 +1,32 @@
----
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
+  creationTimestamp: null
   name: spidey-stage
   namespace: webby-stage
 spec:
   minReadySeconds: 5
+  selector: null
+  strategy: {}
   template:
     metadata:
+      creationTimestamp: null
       labels:
         name: spidey-stage
     spec:
       containers:
-      - name: spidey-stage
-        image: undeadops/webby:master-f619e5d
-        env:
+      - env:
         - name: K8S_CLUSTER
-          value: "whiskey"
+          value: whiskey
         - name: FOO
-          value: "bar"
+          value: bar
+        image: undeadops/webby:master-ae32f1c
+        name: spidey-stage
         ports:
-        - name: http-api
-          containerPort: 5000
+        - containerPort: 5000
+          name: http-api
         resources:
           limits:
-            cpu: "0.1"
+            cpu: 100m
             memory: 100Mi
+status: {}
